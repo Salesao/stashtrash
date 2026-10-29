@@ -32,11 +32,11 @@
 
 StashTrash is the "Saved Messages" chat from your messenger, running on your own server. Send yourself a note, a link, a photo, a document, a video, a song or a voice note, and it shows up on every device you own: your phone, your laptop, your work computer.
 
-Your files and the database live on your VPS. You don't have to set the server up by hand: the app connects to it over SSH and installs everything itself.
+Your files and the database live on your server. You don't have to set it up by hand: the app connects to it over SSH and installs everything itself.
 
 ## Why
 
-- **Your data stays with you.** It's your server, so the storage rules are yours. The only limit is your VPS disk.
+- **Your data stays with you.** It's your server, so the storage rules are yours. The only limit is your server's disk.
 - **One place for everything you don't want to lose.** No more texting yourself in a messenger, keeping notes somewhere else, running a cloud drive and emailing files to yourself.
 - **Phone to computer in one move.** Drag a file into the window, paste it, or tap "+".
 - **Send now, sort later.** Sending asks for nothing. Folders and tags can be added afterwards.
@@ -61,7 +61,7 @@ Your files and the database live on your VPS. You don't have to set the server u
     <td valign="top"><b>New device, no SSH</b><br>Connect it with a QR code, a link or a six-digit code from a device that's already connected.</td>
   </tr>
   <tr>
-    <td valign="top"><b>Server setup from the app</b><br>Enter your VPS address and a password or SSH key. The app shows every install step, and the log if something goes wrong.</td>
+    <td valign="top"><b>Server setup from the app</b><br>Enter your server's address and a password or SSH key. The app shows every install step, and the log if something goes wrong.</td>
     <td valign="top"><b>At home on every platform</b><br>macOS and Android today, Windows and iOS soon. Light and dark themes.</td>
   </tr>
 </table>
@@ -71,15 +71,15 @@ Your files and the database live on your VPS. You don't have to set the server u
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/readme/how-en-dark.png">
-    <img src=".github/readme/how-en-light.png" width="880" alt="Phones and computers sync through your VPS">
+    <img src=".github/readme/how-en-light.png" width="880" alt="Phones and computers sync through your server">
   </picture>
 </p>
 
 1. **Install the app** on a computer or a phone.
-2. **Connect your VPS.** Enter the address, port and user name, then a password or an SSH key. The app installs the server and opens your feed.
+2. **Connect your server.** Enter the address, port and user name, then a password or an SSH key. The app sets everything up and opens your feed.
 3. **Add your other devices.** Open an invite on a device that's already connected. The new one joins with a QR code, a link or a six-digit code, with no SSH needed.
 
-The server needs a Linux VPS with SSH access.
+You need a Linux server with SSH access.
 <!-- TODO: list supported distributions and minimum RAM and disk -->
 
 ## Download
@@ -138,7 +138,7 @@ On a computer:
 <details>
 <summary><b>Where are my files stored?</b></summary>
 <br>
-On your VPS: both the files and the database.
+On your server: both the files and the database.
 </details>
 
 <details>
@@ -150,7 +150,7 @@ No. You run one server, and all your devices connect to it.
 <details>
 <summary><b>Can I use it without a computer?</b></summary>
 <br>
-Yes. You can set up the server from your phone too: enter the VPS address and a password or key right in the app.
+Yes. You can set up the server from your phone too: enter its address and a password or key right in the app.
 </details>
 
 <details>
