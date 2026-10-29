@@ -10,10 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-android-arm64-v8a.apk"><img src=".github/readme/button-android.png" width="196" alt="Скачать для Android"></a>
-  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-macos.dmg"><img src=".github/readme/button-macos.png" width="196" alt="Скачать для macOS"></a>
-  <picture><source media="(prefers-color-scheme: dark)" srcset=".github/readme/button-windows-soon-ru-dark.png"><img src=".github/readme/button-windows-soon-ru-light.png" width="196" alt="Windows: скоро"></picture>
-  <picture><source media="(prefers-color-scheme: dark)" srcset=".github/readme/button-ios-soon-ru-dark.png"><img src=".github/readme/button-ios-soon-ru-light.png" width="196" alt="iOS: скоро"></picture>
+  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-android-arm64-v8a.apk"><img src=".github/readme/button-android.png" width="168" alt="Скачать для Android"></a>
+  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-macos.dmg"><img src=".github/readme/button-macos.png" width="168" alt="Скачать для macOS"></a>
+  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-windows-x64.zip"><img src=".github/readme/button-windows.png" width="168" alt="Скачать для Windows"></a>
+  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-linux-x64.tar.gz"><img src=".github/readme/button-linux.png" width="168" alt="Скачать для Linux"></a>
+  <picture><source media="(prefers-color-scheme: dark)" srcset=".github/readme/button-ios-soon-ru-dark.png"><img src=".github/readme/button-ios-soon-ru-light.png" width="168" alt="iOS: скоро"></picture>
 </p>
 
 <p align="center">
@@ -62,7 +63,7 @@ StashTrash — это «Избранное» из мессенджера, тол
   </tr>
   <tr>
     <td valign="top"><b>Сервер ставится из приложения</b><br>Укажите адрес сервера, пароль или SSH-ключ. Приложение покажет каждый этап установки, а если что-то пойдёт не так — журнал.</td>
-    <td valign="top"><b>Свой вид на каждой платформе</b><br>macOS и Android уже сейчас, Windows и iOS скоро. Светлая и тёмная тема.</td>
+    <td valign="top"><b>Свой вид на каждой платформе</b><br>Android, macOS, Windows и Linux уже сейчас, iOS скоро. Светлая и тёмная тема.</td>
   </tr>
 </table>
 
@@ -89,17 +90,47 @@ StashTrash — это «Избранное» из мессенджера, тол
 | Android (большинство телефонов) | [`StashTrash-android-arm64-v8a.apk`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-android-arm64-v8a.apk) | Когда Android спросит, разрешите установку из этого источника. |
 | Android (старые 32-битные телефоны) | [`StashTrash-android-armeabi-v7a.apk`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-android-armeabi-v7a.apk) | Те же шаги. Выбирайте этот файл, если arm64-v8a не устанавливается. |
 | macOS | [`StashTrash-macos.dmg`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-macos.dmg) | Откройте образ и перетащите StashTrash в «Программы». Подходит для Mac на Apple Silicon и Intel. |
-| Windows | Скоро | — |
+| Windows (64-бит) | [`StashTrash-windows-x64.zip`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-windows-x64.zip) | Распакуйте архив и запустите `stash_trash.exe`. При первом запуске Windows может показать предупреждение, см. ниже. |
+| Linux (64-бит) | [`StashTrash-linux-x64.tar.gz`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-linux-x64.tar.gz) | Распакуйте архив в папку и запустите `stash_trash`. Команды ниже. |
 | iOS | Скоро | — |
 
 Все версии и список изменений — в [Releases](https://github.com/Salesao/stashtrash/releases).
-
-<!-- TODO: вернуть заметку про Windows SmartScreen, когда сборка для Windows будет опубликована -->
 
 <details>
 <summary><b>macOS не даёт открыть приложение</b></summary>
 <br>
 Откройте «Системные настройки» → «Конфиденциальность и безопасность». Внизу, рядом с сообщением о StashTrash, нажмите «Всё равно открыть». Это нужно сделать один раз.
+</details>
+
+<details>
+<summary><b>Windows пишет «Система Windows защитила ваш компьютер»</b></summary>
+<br>
+Приложение пока не подписано платным сертификатом, поэтому Windows относится к нему с осторожностью. Нажмите «Подробнее», затем «Выполнить в любом случае». Это нужно сделать один раз.
+</details>
+
+<details>
+<summary><b>Windows пишет, что нет VCRUNTIME140.dll или MSVCP140.dll</b></summary>
+<br>
+Установите <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft Visual C++ Redistributable (x64)</a> и запустите приложение снова.
+</details>
+
+<details>
+<summary><b>Как установить и запустить в Linux</b></summary>
+<br>
+
+```sh
+mkdir StashTrash
+tar -xzf StashTrash-linux-x64.tar.gz -C StashTrash
+./StashTrash/stash_trash
+```
+
+Сборка сделана на Ubuntu 22.04 и требует glibc 2.34 или новее (Ubuntu 22.04, Debian 12, Fedora 35 и новее). Ещё нужны GTK 3, GStreamer и libsecret. В Debian и Ubuntu:
+
+```sh
+sudo apt install libgtk-3-0 libgstreamer1.0-0 libgstreamer-plugins-base1.0-0 libsecret-1-0
+```
+
+Сборки Linux под ARM пока нет.
 </details>
 
 ## Скриншоты
@@ -152,9 +183,9 @@ StashTrash — это «Избранное» из мессенджера, тол
 </details>
 
 <details>
-<summary><b>А как же Windows и iOS?</b></summary>
+<summary><b>А как же iOS?</b></summary>
 <br>
-Пока нет: сборки для них ещё впереди. Когда они будут готовы, появятся в таблице выше и на странице Releases.
+Пока нет: сборка ещё впереди. Когда она будет готова, появится в таблице выше и на странице Releases.
 </details>
 
 <details>

@@ -10,10 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-android-arm64-v8a.apk"><img src=".github/readme/button-android.png" width="196" alt="Download for Android"></a>
-  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-macos.dmg"><img src=".github/readme/button-macos.png" width="196" alt="Download for macOS"></a>
-  <picture><source media="(prefers-color-scheme: dark)" srcset=".github/readme/button-windows-soon-en-dark.png"><img src=".github/readme/button-windows-soon-en-light.png" width="196" alt="Windows: coming soon"></picture>
-  <picture><source media="(prefers-color-scheme: dark)" srcset=".github/readme/button-ios-soon-en-dark.png"><img src=".github/readme/button-ios-soon-en-light.png" width="196" alt="iOS: coming soon"></picture>
+  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-android-arm64-v8a.apk"><img src=".github/readme/button-android.png" width="168" alt="Download for Android"></a>
+  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-macos.dmg"><img src=".github/readme/button-macos.png" width="168" alt="Download for macOS"></a>
+  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-windows-x64.zip"><img src=".github/readme/button-windows.png" width="168" alt="Download for Windows"></a>
+  <a href="https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-linux-x64.tar.gz"><img src=".github/readme/button-linux.png" width="168" alt="Download for Linux"></a>
+  <picture><source media="(prefers-color-scheme: dark)" srcset=".github/readme/button-ios-soon-en-dark.png"><img src=".github/readme/button-ios-soon-en-light.png" width="168" alt="iOS: coming soon"></picture>
 </p>
 
 <p align="center">
@@ -62,7 +63,7 @@ Your files and the database live on your server. You don't have to set it up by 
   </tr>
   <tr>
     <td valign="top"><b>Server setup from the app</b><br>Enter your server's address and a password or SSH key. The app shows every install step, and the log if something goes wrong.</td>
-    <td valign="top"><b>At home on every platform</b><br>macOS and Android today, Windows and iOS soon. Light and dark themes.</td>
+    <td valign="top"><b>At home on every platform</b><br>Android, macOS, Windows and Linux today, iOS soon. Light and dark themes.</td>
   </tr>
 </table>
 
@@ -89,17 +90,47 @@ You need a Linux server with SSH access.
 | Android (most phones) | [`StashTrash-android-arm64-v8a.apk`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-android-arm64-v8a.apk) | When Android asks, allow installs from this source. |
 | Android (older 32-bit phones) | [`StashTrash-android-armeabi-v7a.apk`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-android-armeabi-v7a.apk) | The same steps. Pick this file if the arm64-v8a one won't install. |
 | macOS | [`StashTrash-macos.dmg`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-macos.dmg) | Open the image and drag StashTrash to Applications. Works on Apple Silicon and Intel Macs. |
-| Windows | Soon | — |
+| Windows (64-bit) | [`StashTrash-windows-x64.zip`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-windows-x64.zip) | Unzip the archive and run `stash_trash.exe`. The first launch may show a Windows warning, see below. |
+| Linux (64-bit) | [`StashTrash-linux-x64.tar.gz`](https://github.com/Salesao/stashtrash/releases/latest/download/StashTrash-linux-x64.tar.gz) | Unpack the archive into a folder and run `stash_trash`. The commands are below. |
 | iOS | Soon | — |
 
 Every version and its changelog is on the [Releases](https://github.com/Salesao/stashtrash/releases) page.
-
-<!-- TODO: bring back the Windows SmartScreen note when the Windows build is published -->
 
 <details>
 <summary><b>macOS won't open the app</b></summary>
 <br>
 Open System Settings → Privacy & Security. Near the bottom, next to the message about StashTrash, click "Open Anyway". You only need to do this once.
+</details>
+
+<details>
+<summary><b>Windows says "Windows protected your PC"</b></summary>
+<br>
+The app isn't signed with a paid certificate yet, so Windows is cautious about it. Click "More info", then "Run anyway". You only need to do this once.
+</details>
+
+<details>
+<summary><b>Windows says VCRUNTIME140.dll or MSVCP140.dll is missing</b></summary>
+<br>
+Install the <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft Visual C++ Redistributable (x64)</a> and start the app again.
+</details>
+
+<details>
+<summary><b>How to install and start on Linux</b></summary>
+<br>
+
+```sh
+mkdir StashTrash
+tar -xzf StashTrash-linux-x64.tar.gz -C StashTrash
+./StashTrash/stash_trash
+```
+
+The build is made on Ubuntu 22.04 and needs glibc 2.34 or newer (Ubuntu 22.04, Debian 12, Fedora 35 and newer). It also needs GTK 3, GStreamer and libsecret. On Debian and Ubuntu:
+
+```sh
+sudo apt install libgtk-3-0 libgstreamer1.0-0 libgstreamer-plugins-base1.0-0 libsecret-1-0
+```
+
+There is no ARM build for Linux yet.
 </details>
 
 ## Screenshots
@@ -154,9 +185,9 @@ Yes. You can set up the server from your phone too: enter its address and a pass
 </details>
 
 <details>
-<summary><b>What about Windows and iOS?</b></summary>
+<summary><b>What about iOS?</b></summary>
 <br>
-Not yet. Builds for both are still to come. When they're ready, they'll appear in the table above and on the Releases page.
+Not yet. The build is still to come. When it's ready, it will appear in the table above and on the Releases page.
 </details>
 
 <details>
