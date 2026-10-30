@@ -39,7 +39,7 @@ Your files and the database live on your server. You don't have to set it up by 
 
 - **Your data stays with you.** It's your server, so the storage rules are yours. The only limit is your server's disk.
 - **One place for everything you don't want to lose.** No more texting yourself in a messenger, keeping notes somewhere else, running a cloud drive and emailing files to yourself.
-- **Phone to computer in one move.** Drag a file into the window, paste it, or tap "+".
+- **Phone to computer in one move.** Drag a file into the window, paste it, or use the paperclip.
 - **Send now, sort later.** Sending asks for nothing. Folders and tags can be added afterwards.
 
 ## Features
